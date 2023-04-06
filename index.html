@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Web Page</title>
+  </head>
+  <body>
+    <h1>欢迎来到我的网页！</h1>
+    <p>这是一个文本段落。</p>
+    <script src="https://cdn.jsdelivr.net/npm/@openai/chat-dynamic@3.5.0/dist/index.js"></script>
+    <script>
+      const chat = new window.OpenAIChat.default({
+        agentId: 'YOUR_AGENT_ID',
+        language: 'en',
+        serverUrl: 'https://api.openai.com/v1',
+        sessionId: 'YOUR_SESSION_ID',
+        userId: 'YOUR_USER_ID',
+        userName: 'YOUR_USER_NAME',
+        welcomeMessage: '你好！我能为您做些什么？',
+      });
+      chat.mount(document.getElementById('chat-container'));
+    </script>
+    <div id="chat-container"></div>
+  </body>
+</html>
